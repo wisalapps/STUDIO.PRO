@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>STUDIO PRO Privacy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<style>
+/* Layout: a single readable column; Arabic first (RTL), English mirror below. Signal-wave accent from the app icon. */
+:root {
+  --bg: #F5F8F8; --surface: #FFFFFF; --fg: #12201F; --muted: #52615F; --line: #D8E3E1;
+  --teal: #0E8F83; --gold: #9A6A12;
+  --f-ar: "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
+  --f-en: "IBM Plex Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0B0F14; --surface: #121A22; --fg: #ECEFF3; --muted: #93A1AF; --line: #24303C; --teal: #1FC8B4; --gold: #E8B04B; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #0B0F14; --surface: #121A22; --fg: #ECEFF3; --muted: #93A1AF; --line: #24303C; --teal: #1FC8B4; --gold: #E8B04B; color-scheme: dark }
+
+body { background: var(--bg); color: var(--fg); font-family: var(--f-ar); font-size: 16px; line-height: 1.75; }
+.wrap { max-width: 46rem; margin: 0 auto; padding-block: 2.5rem 4rem; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 2rem; }
+header { display: flex; align-items: center; gap: 1rem; }
+.mark { width: 56px; height: 56px; flex: none; border-radius: 14px; background: #0B0F14; display: grid; place-items: center; }
+h1 { font-size: 1.75rem; font-weight: 800; margin: 0; line-height: 1.25; text-wrap: balance; }
+.sub { margin: 0; color: var(--muted); font-size: .95rem; }
+section { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1.5rem; min-width: 0; }
+h2 { font-size: 1.2rem; margin: 0 0 .75rem; color: var(--teal); text-wrap: balance; }
+h3 { font-size: 1rem; margin: 1.25rem 0 .25rem; }
+p, li { margin: 0; color: var(--fg); }
+ul { margin: .25rem 0 0; padding-inline-start: 1.25rem; display: grid; gap: .35rem; }
+.meta { color: var(--muted); font-size: .9rem; }
+.mail { font-weight: 600; color: var(--gold); user-select: all; direction: ltr; unicode-bidi: isolate; }
+.en { direction: ltr; text-align: left; font-family: var(--f-en); font-size: 15px; }
+.en h2 { letter-spacing: .01em; }
+.summary { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+.chip { border: 1px solid var(--line); border-radius: 999px; padding: .15rem .7rem; font-size: .85rem; color: var(--muted); }
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+
+<div class="wrap" dir="rtl" lang="ar">
+  <p style="margin:0"><a href="index.html" style="color:var(--teal)">← omani.apps</a></p>
+  <header>
+    <div class="mark" aria-hidden="true">
+      <svg width="40" height="40" viewBox="0 0 108 108" fill="none"><circle cx="54" cy="54" r="29" stroke="#E8B04B" stroke-width="2.6"/><rect x="32.5" y="45" width="7" height="18" rx="3.5" fill="#19C3B1"/><rect x="42" y="38.5" width="7" height="31" rx="3.5" fill="#19C3B1"/><rect x="50.5" y="32" width="7" height="44" rx="3.5" fill="#F2C15C"/><rect x="59" y="38.5" width="7" height="31" rx="3.5" fill="#19C3B1"/><rect x="68.5" y="45" width="7" height="18" rx="3.5" fill="#19C3B1"/></svg>
+    </div>
+    <div>
+      <h1>سياسة الخصوصية — STUDIO PRO</h1>
+      <p class="sub">ستوديو برو · أندرويد وويندوز · آخر تحديث: 29 أكتوبر 2026</p>
+    </div>
+  </header>
+
+  <section>
+    <h2>باختصار</h2>
+    <p>التطبيق يعمل بالكامل على جهازك. لا يجمع بياناتك، ولا يتصل بالإنترنت، ولا يعرض إعلانات.</p>
+    <div class="summary"><span class="chip">بدون حسابات</span><span class="chip">بدون إنترنت</span><span class="chip">بدون إعلانات</span><span class="chip">بدون تتبّع</span></div>
+  </section>
+
+  <section>
+    <h2>البيانات التي يتعامل معها التطبيق</h2>
+    <h3>الصوت من الميكروفون</h3>
+    <p>يُستخدم الميكروفون فقط عندما تضغط «تسجيل» أو «اختبار الصوت» أو تشغّل «العزف الحي»، ويتوقف فور إيقافك أو خروجك من التطبيق. التسجيلات تُحفظ داخل جهازك فقط ولا تُرسل لأي جهة.</p>
+    <h3>المشاريع والملفات</h3>
+    <ul>
+      <li>المشاريع والتسجيلات تُحفظ في مساحة التطبيق الخاصة على جهازك.</li>
+      <li>الملفات التي تصدّرها بنفسك تُحفظ في: الموسيقى/Studio Pro (أندرويد) أو المستندات/Studio Pro (ويندوز). وملفات المشاريع (.mstudio) في التنزيلات/Studio Pro.</li>
+      <li>الملفات الصوتية التي تفتحها أو تستوردها تُقرأ فقط لتحويلها إلى مشروع، ولا تُرفع لأي مكان.</li>
+    </ul>
+    <h3>تقارير الأعطال</h3>
+    <p>إذا توقف التطبيق فجأة يُحفظ تقرير تقني على جهازك (نوع الجهاز، إصدار النظام، ومكان الخطأ في الكود) بدون أي تسجيلات أو بيانات شخصية. لا يُرسل التقرير إلا إذا اخترت أنت إرساله عبر بريدك الإلكتروني.</p>
+  </section>
+
+  <section>
+    <h2>المشاركة مع أطراف أخرى</h2>
+    <p>لا يشارك التطبيق أي بيانات مع أي طرف. لا يحتوي على مكتبات إعلانات أو تحليلات أو تتبّع، ولا يطلب إذن الإنترنت. أي مشاركة (مثل إرسال ملف مشروع عبر واتساب) تتم بقرارك أنت ومن خلال التطبيق الذي تختاره.</p>
+  </section>
+
+  <section>
+    <h2>الأذونات</h2>
+    <ul>
+      <li><b>الميكروفون</b>: للتسجيل واختبار الصوت والعزف الحي فقط.</li>
+    </ul>
+    <p class="meta">التطبيق لا يطلب الموقع أو جهات الاتصال أو الكاميرا أو الإنترنت.</p>
+  </section>
+
+  <section>
+    <h2>حذف بياناتك</h2>
+    <p>تقدر تحذف أي مشروع من داخل التطبيق. وحذف التطبيق من جهازك يحذف كل بياناته الداخلية (يسأل أندرويد هل تريد الاحتفاظ بها). الملفات التي صدّرتها تبقى في مجلداتها حتى تحذفها بنفسك.</p>
+  </section>
+
+  <section>
+    <h2>الأطفال</h2>
+    <p>التطبيق مناسب لجميع الأعمار ولا يجمع أي بيانات من أي مستخدم، بما في ذلك الأطفال.</p>
+  </section>
+
+  <section>
+    <h2>التواصل</h2>
+    <p>لأي سؤال عن الخصوصية أو الدعم: <span class="mail">Wisal.support@gmail.com</span></p>
+    <p class="meta">إذا تغيّرت هذه السياسة سننشر النسخة الجديدة هنا مع تاريخ التحديث.</p>
+  </section>
+
+  <section class="en" dir="ltr" lang="en">
+    <h2>Privacy Policy (English)</h2>
+    <p><b>STUDIO PRO</b> works entirely on your device. It does not collect personal data, does not connect to the internet (it does not request the Internet permission), and contains no ads, analytics or tracking.</p>
+    <h3>Microphone</h3>
+    <p>Used only while you record, test your voice, or use live instrument mode. Recordings stay on your device.</p>
+    <h3>Files</h3>
+    <p>Projects are stored in the app's private storage. Files you export are saved to Music/Studio Pro (Android) or Documents/Studio Pro (Windows); project files (.mstudio) to Downloads/Studio Pro. Audio files you open are processed locally only.</p>
+    <h3>Crash reports</h3>
+    <p>If the app crashes, a technical report (device model, OS version, stack trace, no recordings or personal data) is stored locally and is sent only if you choose to email it.</p>
+    <h3>Sharing, deletion, children</h3>
+    <p>No data is shared with third parties. You can delete projects in the app; uninstalling removes all internal data. The app is suitable for all ages and collects no data from anyone.</p>
+    <h3>Contact</h3>
+    <p><span class="mail">Wisal.support@gmail.com</span> · Last updated: October 29, 2026</p>
+  </section>
+</div>
+
+</body>
+</html>

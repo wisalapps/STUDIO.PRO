@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>omani.apps</title>
+<meta name="description" content="omani.apps — تطبيقات عُمانية أصلية: STUDIO PRO استوديو الإنشاد متعدد المسارات.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: RTL single column; a studded "Omani door" band divides sections; the app card is the one framed object. */
+:root {
+  --bg: #F6F1E7;          /* رمل */
+  --panel: #FFFBF3;
+  --ink: #1B2430;
+  --muted: #5E6672;
+  --line: #E2D7C2;
+  --sea: #0F5E66;          /* خليج عُمان */
+  --amber: #A8661A;        /* لبان */
+  --stud: #C9A56A;
+  --f-display: "Reem Kufi", "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --f-body: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0E1418; --panel: #141C22; --ink: #EDE6D8; --muted: #A3A9B0; --line: #26313A;
+  --sea: #3FB8B0; --amber: #E2A85A; --stud: #8C7448; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #0E1418; --panel: #141C22; --ink: #EDE6D8; --muted: #A3A9B0; --line: #26313A;
+  --sea: #3FB8B0; --amber: #E2A85A; --stud: #8C7448; color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 17px; line-height: 1.8; }
+.wrap { max-width: 64rem; margin: 0 auto; padding-block: 1.5rem 3rem; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 3rem; }
+a { color: var(--sea); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 6px; }
+
+/* الرأس */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.mark { display: flex; align-items: baseline; gap: .6rem; }
+.mark b { font-family: var(--f-mono); font-size: 1.35rem; letter-spacing: .02em; color: var(--ink); direction: ltr; }
+.mark b span { color: var(--amber); }
+.mark small { color: var(--muted); font-size: .95rem; }
+.nav { display: flex; gap: 1.25rem; font-size: .95rem; flex-wrap: wrap; }
+.nav a { color: var(--muted); text-decoration: none; }
+.nav a:hover { color: var(--ink); }
+
+/* الافتتاحية */
+.hero { display: grid; gap: 1rem; max-width: 44rem; }
+.eyebrow { font-family: var(--f-mono); font-size: .8rem; letter-spacing: .14em; color: var(--amber); direction: ltr; text-align: right; }
+h1 { font-family: var(--f-display); font-weight: 700; font-size: clamp(2.2rem, 6vw, 3.6rem); line-height: 1.25; margin: 0; text-wrap: balance; }
+h1 em { font-style: normal; color: var(--sea); }
+.lede { font-size: 1.15rem; color: var(--muted); margin: 0; max-width: 38rem; }
+
+/* شريط الباب العُماني: صف مسامير نحاسية */
+.studs { height: 18px; background-image: radial-gradient(circle at 9px 9px, var(--stud) 0 4px, transparent 4.5px); background-size: 28px 18px; background-repeat: repeat-x; opacity: .9; }
+
+h2 { font-family: var(--f-display); font-weight: 500; font-size: 1.7rem; margin: 0 0 1rem; text-wrap: balance; }
+
+/* بطاقة التطبيق */
+.app { background: var(--panel); border: 1px solid var(--line); border-radius: 22px; padding: clamp(1.25rem, 3vw, 2rem); display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start; }
+.app .icon { width: 108px; height: 108px; border-radius: 26px; display: block; }
+.app .body { min-width: 0; display: grid; gap: .75rem; }
+.app h3 { margin: 0; font-family: var(--f-display); font-weight: 700; font-size: 1.9rem; direction: ltr; text-align: right; }
+.app .ar { color: var(--muted); margin: -.4rem 0 0; }
+.app p { margin: 0; }
+.feat { list-style: none; margin: .25rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: .4rem 1.5rem; }
+.feat li { padding-inline-start: 1.1rem; position: relative; font-size: .98rem; }
+.feat li::before { content: ""; position: absolute; inset-inline-start: 0; top: .72em; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); }
+.plat { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .25rem; }
+.chip { border: 1px solid var(--line); border-radius: 999px; padding: .15rem .8rem; font-size: .88rem; color: var(--muted); white-space: nowrap; }
+.chip.on { border-color: var(--sea); color: var(--sea); }
+
+/* القيم */
+.values { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.75rem; }
+.values h4 { margin: 0 0 .35rem; font-size: 1.05rem; color: var(--sea); }
+.values p { margin: 0; color: var(--muted); font-size: .98rem; }
+
+/* التواصل */
+.contact { display: grid; gap: .75rem; }
+.mail-row { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+.mail { font-family: var(--f-mono); font-size: 1.1rem; direction: ltr; user-select: all; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: .35rem .8rem; }
+button.copy { font: inherit; font-size: .9rem; cursor: pointer; border: 1px solid var(--sea); color: var(--sea); background: transparent; border-radius: 10px; padding: .35rem .9rem; }
+button.copy:hover { background: color-mix(in srgb, var(--sea) 10%, transparent); }
+.muted { color: var(--muted); font-size: .95rem; margin: 0; }
+
+/* الإنجليزية */
+.en { direction: ltr; text-align: left; border-top: 1px solid var(--line); padding-top: 2rem; display: grid; gap: .6rem; font-size: 1rem; }
+.en h2 { font-family: var(--f-body); font-weight: 700; font-size: 1.25rem; margin: 0; }
+.en p { margin: 0; color: var(--muted); max-width: 46rem; }
+
+footer { color: var(--muted); font-size: .88rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 1.25rem; }
+footer .lat { direction: ltr; font-family: var(--f-mono); }
+
+@media (max-width: 560px) {
+  .app { grid-template-columns: 1fr; }
+  .app .icon { width: 84px; height: 84px; border-radius: 20px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .app .icon { transition: transform .3s ease; }
+  .app:hover .icon { transform: rotate(-3deg) scale(1.03); }
+}
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+
+<div class="wrap" dir="rtl" lang="ar">
+  <header class="top">
+    <div class="mark"><b>omani<span>.</span>apps</b><small>تطبيقات عُمانية</small></div>
+    <nav class="nav" aria-label="أقسام الصفحة">
+      <a href="#apps">تطبيقاتنا</a><a href="#values">مبادئنا</a><a href="#contact">تواصل</a>
+      <a href="privacy.html">الخصوصية</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">MUSCAT · OMAN · EST. 2026</div>
+    <h1>تطبيقات أصلية <em>تُصنع في عُمان</em></h1>
+    <p class="lede">omani.apps فريق تطوير مستقل يبني تطبيقات أندرويد وويندوز بالعربية أولاً. أدواتنا تعمل على جهازك مباشرة، بلا إعلانات، وبلا جمع لبياناتك.</p>
+  </section>
+
+  <div class="studs" aria-hidden="true"></div>
+
+  <section id="apps">
+    <h2>تطبيقاتنا</h2>
+    <article class="app">
+      <svg class="icon" viewBox="0 0 108 108" role="img" aria-label="أيقونة STUDIO PRO">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0A0F16"/><stop offset="1" stop-color="#123044"/></linearGradient>
+          <radialGradient id="r" cx=".5" cy=".5" r=".38"><stop offset="0" stop-color="#19C3B1" stop-opacity=".22"/><stop offset="1" stop-color="#19C3B1" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="108" height="108" fill="url(#g)"/><rect width="108" height="108" fill="url(#r)"/>
+        <circle cx="54" cy="54" r="29" fill="none" stroke="#E8B04B" stroke-width="2.6"/>
+        <rect x="32.5" y="45" width="7" height="18" rx="3.5" fill="#19C3B1"/><rect x="42" y="38.5" width="7" height="31" rx="3.5" fill="#19C3B1"/>
+        <rect x="50.5" y="32" width="7" height="44" rx="3.5" fill="#F2C15C"/><rect x="59" y="38.5" width="7" height="31" rx="3.5" fill="#19C3B1"/>
+        <rect x="68.5" y="45" width="7" height="18" rx="3.5" fill="#19C3B1"/>
+      </svg>
+      <div class="body">
+        <h3>STUDIO PRO</h3>
+        <p class="ar">ستوديو برو — استوديو الإنشاد متعدد المسارات</p>
+        <p>سجّل صوتك على مسارات متعددة، واضبطه على المقامات العربية بأرباع الأصوات، وأضف الكورال والإيقاع البشري، ثم صدّر عملك بجودة عالية، كله من جوالك أو حاسوبك وبدون إنترنت.</p>
+        <ul class="feat">
+          <li>حتى 24 مساراً مع تحرير كامل وحلقة تكرار</li>
+          <li>تصحيح النغمة على راست، بياتي، حجاز، صبا…</li>
+          <li>أدوار الأصوات: Lead و Backing و Hook و Vamps</li>
+          <li>إيقاع بشري: دمم، باا، هاا، ييه، أووه</li>
+          <li>آلات بصوتك: عود، ناي، بيانو، آهات، بيز بشري</li>
+          <li>تصدير MP3 و WAV وملف مشروع قابل للتعديل</li>
+        </ul>
+        <div class="plat"><span class="chip on">Android 10+</span><span class="chip on">Windows 10 / 11</span><span class="chip">الإصدار 3.3</span><span class="chip">مجاني</span><span class="chip">قريباً على Uptodown</span></div>
+      </div>
+    </article>
+  </section>
+
+  <section id="values">
+    <h2>مبادئنا</h2>
+    <div class="values">
+      <div><h4>العربية أولاً</h4><p>نصمم الواجهات من اليمين إلى اليسار من البداية، بخطوط ومصطلحات يفهمها المستخدم العربي.</p></div>
+      <div><h4>خصوصيتك محفوظة</h4><p>تطبيقاتنا لا تجمع بيانات شخصية ولا تتصل بالإنترنت. تسجيلاتك وملفاتك تبقى على جهازك.</p></div>
+      <div><h4>برمجة أصلية</h4><p>نكتب تطبيقاتنا بلغة Kotlin مباشرة على أندرويد وويندوز، بدون متصفح مدمج، لأداء سريع وتأخير صوت منخفض.</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>تواصل معنا</h2>
+    <div class="mail-row">
+      <span class="mail" id="mail">Wisal.support@gmail.com</span>
+      <button class="copy" id="copyBtn" type="button">نسخ البريد</button>
+    </div>
+    <p class="muted">للدعم الفني، الاقتراحات، أو التعاون. نرد عادة خلال أيام قليلة.</p>
+  </section>
+
+  <section class="en" lang="en">
+    <h2>About omani.apps</h2>
+    <p>omani.apps is an independent development team from Oman building native, Arabic-first apps for Android and Windows. Our first app, <b>STUDIO PRO</b>, is a multitrack studio for nasheed and vocals with maqam pitch correction, vocal roles, human-voice rhythms and high-quality export. It works fully offline, has no ads, and collects no personal data.</p>
+    <p>Contact: <span style="font-family: var(--f-mono); user-select: all;">Wisal.support@gmail.com</span> · <a href="privacy.html">Privacy policy</a></p>
+  </section>
+
+  <footer>
+    <span>© 2026 omani.apps · سلطنة عُمان</span>
+    <span class="lat">23.5880° N, 58.3829° E</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById('copyBtn');
+  var mail = document.getElementById('mail');
+  btn.addEventListener('click', function () {
+    var text = mail.textContent.trim();
+    function selectIt() { var r = document.createRange(); r.selectNodeContents(mail); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'حدّده وانسخه'; }
+    try {
+      navigator.clipboard.writeText(text).then(function () { btn.textContent = 'نُسخ ✓'; setTimeout(function () { btn.textContent = 'نسخ البريد'; }, 1800); }, selectIt);
+    } catch (e) { selectIt(); }
+  });
+})();
+</script>
+
+</body>
+</html>
